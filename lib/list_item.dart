@@ -1,28 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:list_makanan_flutter/detail_page.dart';
+import 'package:list_makanan_flutter/makanan.dart';
 
 class ListItem extends StatelessWidget {
-  final String nama;
-  final String detail;
-  final String deskripsi;
-  final String gambar;
-  final String waktubuka;
-  final String harga;
-  final String kalori;
-  final List<String> gambarlain;
-  final List<Map<String, String>> bahan;
+  final Makanan makanan;
 
   const ListItem(
-      {super.key,
-      required this.nama,
-      required this.harga,
-      required this.gambarlain,
-      required this.detail,
-      required this.kalori,
-      required this.bahan,
-      required this.waktubuka,
-      required this.deskripsi,
-      required this.gambar});
+      {super.key,required this.makanan});
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +36,7 @@ class ListItem extends StatelessWidget {
               height: 75,
               color: Colors.grey,
               child: Image.asset(
-                gambar,
+                makanan.gambar,
                 fit: BoxFit.cover,
               ),
             ),
@@ -63,14 +47,14 @@ class ListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  nama,
+                  makanan.nama,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  deskripsi,
+                  makanan.deskripsi,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                   ),
@@ -84,16 +68,7 @@ class ListItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => DetailPage(
-                nama: nama,
-                harga: harga,
-                gambarlain: gambarlain,
-                detail: detail,
-                kalori: kalori,
-                waktubuka: waktubuka,
-                deskripsi: deskripsi,
-                gambar: gambar,
-                bahan: bahan),
+            builder: (context) => DetailPage(makanan: makanan),
           ),
         );
       },
