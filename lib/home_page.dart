@@ -22,17 +22,7 @@ class HomePage extends StatelessWidget {
               child: ListView.builder(
                 itemCount: listMakanan.length,
                 itemBuilder: (context, index) {
-                  return ListItem(
-                    nama: listMakanan[index].nama,
-                    harga: listMakanan[index].harga,
-                    gambarlain: listMakanan[index].gambarlain,
-                    detail: listMakanan[index].detail,
-                    kalori: listMakanan[index].kalori,
-                    bahan: listMakanan[index].bahan,
-                    waktubuka: listMakanan[index].waktubuka,
-                    deskripsi: listMakanan[index].deskripsi,
-                    gambar: listMakanan[index].gambar,
-                  );
+                  return ListItem(makanan: listMakanan[index]);
                 },
               )),
         )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:list_makanan_flutter/detail_page.dart';
 import 'package:list_makanan_flutter/home_page.dart';
 import 'package:list_makanan_flutter/styles.dart';
 
